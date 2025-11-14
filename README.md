@@ -1,12 +1,15 @@
-# RSCAMamba
+<div align=center>
+  
+# Fisheye Image Segmentation with Adaptive Sampling and Edge Enhancement
 
+</div>
 
 ## Install
 
-Open the folder **airs** using **Linux Terminal** and create python environment:
+Open the folder **your_env** using **Linux Terminal** and create python environment:
 ```
-conda create -n airs python=3.8
-conda activate airs
+conda create -n your_env python=3.8
+conda activate your_env
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install -r GeoSeg/requirements.txt
 ```
@@ -17,12 +20,23 @@ pip install causal-conv1d>=1.4.0
 pip install mamba-ssm
 ```
 
+## WoodScape
+
+Download this dataset from the following link/location:https://woodscape.valeo.com/woodscape/
+
+Dataset splitting: Randomly select 1000 images from WoodScape as the validation set, with the remaining images used as the training set.
+
+## Pretrained Weights of Backbones
+
+[Google Drive](https://drive.google.com/drive/folders/1ELpFKONJZbXmwB5WCXG7w42eHtrXzyPn?usp=sharing)
+
+
 ## Training
 
 "-c" means the path of the config, use different **config** to train different models.
 
 ```
-python GeoSeg/train_supervision.py -c GeoSeg/config/uavid/unetformer.py
+python /root/GeoSeg/train_supervision.py -c /root/GeoSeg/config/vaihingen/dcswin.py
 ```
 
 ## Testing
@@ -35,7 +49,6 @@ python GeoSeg/train_supervision.py -c GeoSeg/config/uavid/unetformer.py
 
 "--rgb" denotes whether to output masks in RGB format
 
-**WoodScape**
 ```
-python GeoSeg/vaihingen_test.py -c GeoSeg/config/vaihingen/dcswin.py -o fig_results/vaihingen/dcswin --rgb -t 'd4'
+python GeoSeg/vaihingen_test.py -c GeoSeg/config/vaihingen/dcswin.py -o fig_results/woodscape_testA/dcswin --rgb -t 'lr'
 ```
