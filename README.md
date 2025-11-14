@@ -1,6 +1,6 @@
 <div align=center>
   
-# Fisheye Image Segmentation with Adaptive Sampling and Edge Enhancement
+  # Fisheye Image Segmentation with Adaptive Sampling and Edge Enhancement
 
 </div>
 
