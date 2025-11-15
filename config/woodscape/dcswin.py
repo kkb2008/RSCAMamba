@@ -39,13 +39,13 @@ pretrained_ckpt_path = None # the path for the pretrained model weight
 gpus = 'auto'  # default or gpu ids:[0] or gpu nums: 2, more setting can refer to pytorch_lightning
 resume_ckpt_path = None  # whether continue training with the checkpoint, default None
 
-# depths = [2, 2, 6, 2] # swin-tiny
+depths = [2, 2, 6, 2] # swin-tiny
 # depths = [2, 2, 18, 2] # swin-small
-depths = [2, 2, 18, 2] # swin-base
+# depths = [2, 2, 18, 2] # swin-base
 
 #  define the network
-net = swinMamba_base(num_classes=num_classes)
-# net = swinMamba_tiny(num_classes=num_classes)
+# net = swinMamba_base(num_classes=num_classes)
+net = swinMamba_tiny(num_classes=num_classes)
 # net = swinMamba_small(num_classes=num_classes)
 # net = resMamba_34(num_classes=num_classes)
 
@@ -213,3 +213,4 @@ net_params = process_model_params(net, layerwise_params=layerwise_params, lr_sca
 base_optimizer = torch.optim.AdamW(net_params, lr=lr, betas=(0.9, 0.999), eps=1e-8, weight_decay=weight_decay)
 optimizer = Lookahead(base_optimizer)
 lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2, eta_min=1e-6)
+
