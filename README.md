@@ -50,7 +50,7 @@ python /root/GeoSeg/train_supervision.py -c /root/GeoSeg/config/woodscape/dcswin
 "--rgb" denotes whether to output masks in RGB format
 
 ```
-python GeoSeg/woodscape_test.py -c GeoSeg/config/woodscape/dcswin.py -o fig_results/woodscape_test/dcswin --rgb -t 'lr'
+python GeoSeg/model_test.py -c GeoSeg/config/woodscape/dcswin.py -o fig_results/woodscape_test/dcswin --rgb -t 'lr'
 ```
 
 #### Segmentation reslut in woodscape dataset：
