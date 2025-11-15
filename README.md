@@ -36,7 +36,7 @@ Dataset splitting: Randomly select 1000 images from WoodScape as the validation 
 "-c" means the path of the config, use different **config** to train different models.
 
 ```
-python /root/GeoSeg/train_supervision.py -c /root/GeoSeg/config/vaihingen/dcswin.py
+python /root/GeoSeg/train_supervision.py -c /root/GeoSeg/config/woodscape/dcswin.py
 ```
 
 ## Testing
@@ -50,5 +50,5 @@ python /root/GeoSeg/train_supervision.py -c /root/GeoSeg/config/vaihingen/dcswin
 "--rgb" denotes whether to output masks in RGB format
 
 ```
-python GeoSeg/vaihingen_test.py -c GeoSeg/config/vaihingen/dcswin.py -o fig_results/woodscape_testA/dcswin --rgb -t 'lr'
+python GeoSeg/woodscape_test.py -c GeoSeg/config/woodscape/dcswin.py -o fig_results/woodscape_test/dcswin --rgb -t 'lr'
 ```
