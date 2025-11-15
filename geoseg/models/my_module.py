@@ -30,7 +30,7 @@ class KIntegration(nn.Module):
         self.fuse5and4 = KModule(channels5, channels4)
         self.fuse4and3 = KModule(channels4, channels3)
         self.likeSe = feature_extraction.FeatureFuse(channels3)
-        self.conv = nn.Conv2d(channels3 * 2, channels3, kernel_size=3, stride=1, padding=1)
+        self.conv = nn.Conv2d(channels3 * 4, channels3 * 2, kernel_size=3, stride=1, padding=1)
 
     def forward(self, data):
         res2, res3, res4, res5 = data
