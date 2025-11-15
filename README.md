@@ -53,7 +53,7 @@ python /root/GeoSeg/train_supervision.py -c /root/GeoSeg/config/woodscape/dcswin
 python GeoSeg/woodscape_test.py -c GeoSeg/config/woodscape/dcswin.py -o fig_results/woodscape_test/dcswin --rgb -t 'lr'
 ```
 
-segmentation reslut in woodscape dataset
+#### segmentation reslut in woodscape dataset：
 <div>
 <img src="woodscape_image/03596_MVL.png" width="30%"/>
 <img src="seg_result/03596_MVL.png" width="30%"/>
