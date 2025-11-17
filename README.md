@@ -20,19 +20,19 @@ pip install causal-conv1d>=1.4.0
 pip install mamba-ssm
 ```
 
-## WoodScape
+## WoodScape Dataset
 
-Download this dataset from the following link/location:https://woodscape.valeo.com/woodscape/
+Download this dataset from the following link/location:https://woodscape.valeo.com/woodscape/.
 
 Dataset splitting: Randomly select 1000 images from WoodScape as the validation set, with the remaining images used as the training set.
 
 
-## CityscapeFisheye
+## Synthesized Fisheye Dataset
 
-First, prepare the Cityscapes dataset. Download Cityscapes dataset from the following link/location:https://www.cityscapes-dataset.com/
+First, prepare the Cityscapes dataset. Download Cityscapes dataset from the following link/location:https://www.cityscapes-dataset.com/.
 
 
-Then, use fishImageGenerator.py to convert the Cityscapes dataset to the fisheye format.
+Then, use fishImageGenerator.py to convert the Cityscapes dataset to the fisheye format, namely the CityscapesFisheye dataset.
 
 
 ## Pretrained Weights of Backbones
