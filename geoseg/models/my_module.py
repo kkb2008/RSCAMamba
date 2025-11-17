@@ -30,7 +30,6 @@ class KIntegration(nn.Module):
         self.fuse5and4 = KModule(channels5, channels4)
         self.fuse4and3 = KModule(channels4, channels3)
         self.likeSe = feature_extraction.FeatureFuse(channels3)
-        self.conv = nn.Conv2d(channels3 * 4, channels3 * 2, kernel_size=3, stride=1, padding=1)
 
     def forward(self, data):
         res2, res3, res4, res5 = data
@@ -42,7 +41,6 @@ class KIntegration(nn.Module):
 
         for d in [outData2, outData3, outData4]:
             pool_out = F.interpolate(d, (H, W), mode='bilinear', align_corners=False)
-            out.append(pool_out)
+        out.append(pool_out)
         out = torch.cat(out, dim=1)
-        out = self.conv(out)
         return out
