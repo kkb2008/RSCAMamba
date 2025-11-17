@@ -11,7 +11,7 @@ from functools import partial
 
 
 # training hparam
-max_epoch = 40
+max_epoch = 100
 ignore_index = len(CLASSES)
 train_batch_size = 6
 val_batch_size = 2
@@ -150,13 +150,13 @@ def test_aug(img, mask):
     img, mask = aug['image'], aug['mask']
     return img, mask
 
-train_dataset = CityScapesDataset(data_root='/root/autodl-tmp/cityscapesFisheye', mode='train',
+train_dataset = CityScapesDataset(data_root='your_dataset_path', mode='train',
                                  mosaic_ratio=0, transform=train_aug)
 
 
-val_dataset = CityScapesDataset(data_root='/root/autodl-tmp/cityscapesFisheye', mode='val',transform=val_aug)
+val_dataset = CityScapesDataset(data_root='your_dataset_path', mode='val',transform=val_aug)
 
-test_dataset = CityScapesDataset(data_root='/root/autodl-tmp/cityscapesFisheye',
+test_dataset = CityScapesDataset(data_root='your_dataset_path',
                                 transform=val_aug)
 
 
