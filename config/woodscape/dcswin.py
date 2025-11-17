@@ -13,7 +13,7 @@ from functools import partial
 # training hparam
 max_epoch = 30
 ignore_index = len(CLASSES)
-train_batch_size = 8
+train_batch_size = 6
 val_batch_size = 4
 lr = 1e-3 
 weight_decay = 2.5e-4
@@ -213,4 +213,5 @@ net_params = process_model_params(net, layerwise_params=layerwise_params, lr_sca
 base_optimizer = torch.optim.AdamW(net_params, lr=lr, betas=(0.9, 0.999), eps=1e-8, weight_decay=weight_decay)
 optimizer = Lookahead(base_optimizer)
 lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2, eta_min=1e-6)
+
 
