@@ -26,6 +26,15 @@ Download this dataset from the following link/location:https://woodscape.valeo.c
 
 Dataset splitting: Randomly select 1000 images from WoodScape as the validation set, with the remaining images used as the training set.
 
+
+## CityscapeFisheye
+
+First, prepare the Cityscapes dataset. Download Cityscapes dataset from the following link/location:https://www.cityscapes-dataset.com/
+
+
+Then, use fishImageGenerator.py to convert the Cityscapes dataset to the fisheye format.
+
+
 ## Pretrained Weights of Backbones
 
 [Google Drive](https://drive.google.com/drive/folders/1ELpFKONJZbXmwB5WCXG7w42eHtrXzyPn?usp=sharing)
@@ -58,9 +67,3 @@ python GeoSeg/model_test.py -c GeoSeg/config/woodscape/dcswin.py -o fig_results/
 <img src="woodscape_image/03596_MVL.png" width="30%"/>
 <img src="seg_result/03596_MVL.png" width="30%"/>
 </div>
-
-## CityscapeFisheye
-First, prepare the Cityscapes dataset. Download Cityscapes dataset from the following link/location:https://www.cityscapes-dataset.com/
-
-Then, use fishImageGenerator.py to convert the Cityscapes dataset to the fisheye format.
-
