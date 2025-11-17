@@ -5,8 +5,6 @@ import math
 import torch.utils.model_zoo as model_zoo
 import numpy as np
 
-# __all__ = ["resnet", "resnet50", "resnet101"]
-
 
 class CBAM(nn.Module):
 
@@ -175,8 +173,6 @@ class LinearScheduler(nn.Module):
 
         self.i += 1
 
-
-# resNet的模型主干
 model_urls = {
     'resnet18': 'https://download.pytorch.org/models/resnet18-5c106cde.pth',
     'resnet34': 'https://download.pytorch.org/models/resnet34-333f7ec4.pth',
@@ -184,14 +180,6 @@ model_urls = {
     'resnet101': 'https://download.pytorch.org/models/resnet101-5d3b4d8f.pth',
     'resnet152': 'https://download.pytorch.org/models/resnet152-b121ed2d.pth',
 }
-
-
-# 注意可能会报警高，因为有一个函数，在高版本的pytorch中不适用了
-# model_zoo 在较新版本的 PyTorch 中已被弃用，推荐使用
-# from torch.hub import load_state_dict_from_url
-# state_dict = load_state_dict_from_url(model_urls['resnet34'], model_dir='.')
-# model.load_state_dict(state_dict, strict=False)
-
 
 def constant_init(module, constant, bias=0):
     nn.init.constant_(module.weight, constant)
@@ -463,14 +451,7 @@ def resnet152(pretrained=False, cbam=False, dcn=False, drop_prob=0):
 
 
 def resnet(pretrained=False, version="18", cbam=False, dcn=False, drop_prob=0):
-    """
-        pretrained:是否需要预训练权重
-        version:想要使用的resnet的版本,如resnet50、resnet101等
-        cbam:False 默认就行
-        dcn:False  默认就行
-        drop_prob:0  默认就行
-    """
-    # version = str(kwargs.pop('version'))
+
     if version == '18':
         return resnet18(pretrained, cbam=cbam, dcn=dcn, drop_prob=drop_prob)
     if version == '34':
