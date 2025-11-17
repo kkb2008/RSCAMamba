@@ -13,7 +13,7 @@ from functools import partial
 # training hparam
 max_epoch = 40
 ignore_index = len(CLASSES)
-train_batch_size = 8
+train_batch_size = 6
 val_batch_size = 2
 lr = 5e-4
 weight_decay = 1e-4 
