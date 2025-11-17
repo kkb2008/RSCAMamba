@@ -23,10 +23,10 @@ accumulate_n = 1
 num_classes = len(CLASSES)
 classes = CLASSES
 
-weights_name = "cityFish-tiny-640-512crop-e40-mask2former"
+weights_name = "model_name"
 weights_path = "model_weights/woodscape/{}".format(weights_name)
-test_weights_name = "cityFish-tiny-640-512crop-e40-mask2former"
-log_name = 'woodscape/{}'.format(weights_name)
+test_weights_name = "model_name"
+log_name = 'cityscapesFisheye/{}'.format(weights_name)
 monitor = 'val_mIoU'
 monitor_mode = 'max'
 save_top_k = 1
