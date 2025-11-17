@@ -8,7 +8,7 @@ import timm
 class PyramidMamba(nn.Module):
     def __init__(self,
                  encoder_channels=(128, 256, 512, 1024),
-                 num_classes=6,
+                 num_classes=10,
                  embed_dim=128,
                  depths=(2, 2, 18, 2),
                  num_heads=(4, 8, 16, 32),
@@ -38,7 +38,7 @@ class EfficientPyramidMamba(nn.Module):
                  backbone_name='resnet50',
                  pretrained=True,
                  embed_dim=64,
-                 num_classes=6,
+                 num_classes=10,
                  decoder_channels=128,
                  last_feat_size=(30, 40)
                  ):
