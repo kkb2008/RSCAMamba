@@ -9,6 +9,7 @@ import torch
 from torch import nn, Tensor
 from torch.optim import Optimizer
 
+
 def merge_dicts(*dicts: dict) -> dict:
     """Recursive dict merge.
     Instead of updating only top-level keys,
