@@ -4,14 +4,14 @@ from tqdm import tqdm
 import random
 import shutil
 
-jsondir = r"/root/autodl-tmp/WoodScape/annotations/gtLabels"
-jpgdir = r"/root/autodl-tmp/WoodScape/images"
+jsondir = r"WoodScape/annotations/gtLabels"
+jpgdir = r"WoodScape/images"
 
-jpgtraindir = r"/root/autodl-tmp/WoodScape/splitData/images/train"
-jpgvaldir = r"/root/autodl-tmp/WoodScape/splitData/images/val"
+jpgtraindir = r"WoodScape/splitData/images/train"
+jpgvaldir = r"WoodScape/splitData/images/val"
 
-jsontraindir = r"/root/autodl-tmp/WoodScape/splitData/gtLabels/train"
-jsonvaldir = r"/root/autodl-tmp/WoodScape/splitData/gtLabels/val"
+jsontraindir = r"WoodScape/splitData/gtLabels/train"
+jsonvaldir = r"WoodScape/splitData/gtLabels/val"
 
 os.makedirs(jpgtraindir, exist_ok=True)
 os.makedirs(jpgvaldir, exist_ok=True)
