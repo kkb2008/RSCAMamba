@@ -67,7 +67,7 @@ def val_aug(img, mask):
 
 
 class VaihingenDataset(Dataset):
-    def __init__(self, data_root='/root/autodl-tmp/WoodScape/splitData', mode='val', img_dir='images/val', mask_dir='gtLabels/val',
+    def __init__(self, data_root='your_dataset_path', mode='val', img_dir='images/val', mask_dir='gtLabels/val',
                  img_suffix='.png', mask_suffix='.png', transform=val_aug, mosaic_ratio=0.0,
                  img_size=ORIGIN_IMG_SIZE):
         if mode == "val" or mode == "test":
@@ -252,3 +252,4 @@ def show_mask(img, mask, img_id):
     ax2.imshow(mask)
     ax2.set_title('Mask ' + str(img_id)+'.png')
     ax2.legend(handles=patches, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0., fontsize='large')
+
