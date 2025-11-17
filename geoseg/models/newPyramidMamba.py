@@ -40,7 +40,7 @@ class EfficientPyramidMamba(nn.Module):
                  embed_dim=64,
                  num_classes=6,
                  decoder_channels=128,
-                 last_feat_size=(30, 40)  # last_feat_size=input_img_size // 32
+                 last_feat_size=(30, 40)
                  ):
         super(EfficientPyramidMamba, self).__init__()
 
