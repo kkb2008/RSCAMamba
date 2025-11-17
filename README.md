@@ -62,12 +62,5 @@ python GeoSeg/model_test.py -c GeoSeg/config/woodscape/dcswin.py -o fig_results/
 ## CityscapeFisheye
 First, prepare the Cityscapes dataset. Download Cityscapes dataset from the following link/location:https://www.cityscapes-dataset.com/
 
-Then, use this function for conversion.
-
-
-## Training
-
-
-## Testing
-
+Then, use fishImageGenerator.py to convert the Cityscapes dataset to the fisheye format.
 
