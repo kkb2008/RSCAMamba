@@ -11,7 +11,7 @@ from functools import partial
 
 
 # training hparam
-max_epoch = 30
+max_epoch = 100
 ignore_index = len(CLASSES)
 train_batch_size = 6
 val_batch_size = 4
@@ -24,9 +24,9 @@ num_classes = len(CLASSES)
 classes = CLASSES
 
 
-weights_name = "dcswin-base-1280-ms-512crop-e30-01-1114-lunch"  
+weights_name = "model_name"  
 weights_path = "model_weights/woodscape/{}".format(weights_name)
-test_weights_name = "dcswin-base-1280-ms-512crop-e30-01-1114-lunch"
+test_weights_name = "model_name"
 log_name = 'woodscape/{}'.format(weights_name)
 monitor = 'val_mIoU'
 monitor_mode = 'max'
@@ -159,13 +159,13 @@ def test_aug(img, mask):
     return img, mask
 
 
-train_dataset = VaihingenDataset(data_root='/root/autodl-tmp/WoodScape/splitData', mode='train',
+train_dataset = VaihingenDataset(data_root='your_dataset_path', mode='train',
                                  mosaic_ratio=0.25, transform=train_aug)
 
-val_dataset = VaihingenDataset(data_root='/root/autodl-tmp/WoodScape/splitData', mode='val',transform=val_aug)
+val_dataset = VaihingenDataset(data_root='your_dataset_path', mode='val',transform=val_aug)
 
 
-test_dataset = VaihingenDataset(data_root='/root/autodl-tmp/WoodScape/splitData',
+test_dataset = VaihingenDataset(data_root='your_dataset_path',
                                 transform=val_aug)
 
 
@@ -213,5 +213,6 @@ net_params = process_model_params(net, layerwise_params=layerwise_params, lr_sca
 base_optimizer = torch.optim.AdamW(net_params, lr=lr, betas=(0.9, 0.999), eps=1e-8, weight_decay=weight_decay)
 optimizer = Lookahead(base_optimizer)
 lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2, eta_min=1e-6)
+
 
 
