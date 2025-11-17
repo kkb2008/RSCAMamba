@@ -33,14 +33,14 @@ class KIntegration(nn.Module):
 
     def forward(self, data):
         res2, res3, res4, res5 = data
-        _, _, H, W = res2.shape
-        out = []
-        outData4 = self.fuse5and4(res5, res4)
-        outData3 = self.fuse4and3(outData4, res3)
-        outData2 = self.likeSe(outData3)
+        _, _, H, W = res2.shape
+        out = []
+        outData4 = self.fuse5and4(res5, res4)
+        outData3 = self.fuse4and3(outData4, res3)
+        outData2 = self.likeSe(outData3)
+        for d in [outData2, outData3, outData4]:
+            pool_out = F.interpolate(d, (H, W), mode='bilinear', align_corners=False)
+        out.append(pool_out)
 
-        for d in [outData2, outData3, outData4]:
-            pool_out = F.interpolate(d, (H, W), mode='bilinear', align_corners=False)
-        out.append(pool_out)
-        out = torch.cat(out, dim=1)
-        return out
+        out = torch.cat(out, dim=1)
+        return out
