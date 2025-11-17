@@ -43,7 +43,6 @@ PALETTE = [
     [230, 0, 0], [32, 11, 119], [0, 0, 0]
 ]
 
-# (640, 576)   (480, 416)
 ORIGIN_IMG_SIZE = (640, 640)
 INPUT_IMG_SIZE = (640, 640)
 TEST_IMG_SIZE = (640, 640)
@@ -83,7 +82,7 @@ def val_aug(img, mask):
 
 
 class CityScapesDataset(Dataset):
-    def __init__(self, data_root='/root/autodl-tmp/cityscapesFisheye', mode='val', img_dir='leftImg8bit/val', mask_dir='gtFine/val',
+    def __init__(self, data_root='your_dataset_path', mode='val', img_dir='leftImg8bit/val', mask_dir='gtFine/val',
                  img_suffix='.png', mask_suffix='.png', transform=val_aug, mosaic_ratio=0.0,
                  img_size=ORIGIN_IMG_SIZE):
         if mode == "val" or mode == "test":
